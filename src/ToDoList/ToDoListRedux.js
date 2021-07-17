@@ -4,6 +4,7 @@ import { addTaskApi, checkTaskApi, delTaskApi, getTaskListApi, recheckTaskApi } 
 import "./style.css";
 import hinh from "./X2oObC4.png";
 import DateTime from "./DateTime"
+import Loading from './Loading';
 export default function ToDoListRedux(props) {
     const{taskList}=useSelector(state =>state.ToDoListReducer);
     const dispatch = useDispatch();
@@ -40,7 +41,8 @@ export default function ToDoListRedux(props) {
       }
     
     const getTaskList =()=>{
-       dispatch(getTaskListApi())
+       dispatch(getTaskListApi());
+
     };
 
     useEffect(() => {
@@ -110,8 +112,8 @@ export default function ToDoListRedux(props) {
         if(state.isValid){
             dispatch(addTaskApi(state.values.taskName));
             state.values.taskName="";
-        }
-       
+        };
+      
      };
     return (
           <form onSubmit={addTask} className="card">
@@ -129,6 +131,7 @@ export default function ToDoListRedux(props) {
                             <input name="taskName" onChange={handleChange} value={state.values.taskName} id="newTask"  type="text" placeholder="Enter an activity..." />
                             <button type="submit" id="addItem" onClick={addTask}><i className="fa fa-plus" /></button>
                         </div>
+                     
                         <div className="error"> {state.errors.taskName}</div>
                         <div id="notiInput" className="alert-danger" style={{display: 'none'}}/>
                         <div className="card__todo">
@@ -137,7 +140,9 @@ export default function ToDoListRedux(props) {
                         </div>
                     </div>
                 </div>
+                <Loading/>
             </form>
+            
     )
 }
 

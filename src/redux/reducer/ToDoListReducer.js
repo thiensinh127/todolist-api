@@ -2,6 +2,7 @@ import { GET_TASK_API } from "../constants/ToDoListConstants";
 
 const initialState = {
     taskList:[],
+    loading:false,
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +12,10 @@ export default (state = initialState, action) => {
         state.taskList=action.taskList
     
         return { ...state}
-
+    case "SHOW_LOADING":
+        return { ...state, loading:true};
+    case "HIDE_LOADING":
+            return { ...state, loading:false};
     default:
         return state
     }

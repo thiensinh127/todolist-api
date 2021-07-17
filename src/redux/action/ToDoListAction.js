@@ -4,6 +4,7 @@ import { GET_TASK_API } from "../constants/ToDoListConstants"
 export const getTaskListApi = () => {
     
     return  dispatch=>{
+        dispatch(showLoading())
         return axios({
             url:"http://svcy.myclass.vn/api/ToDoList/GetAllTask",
             method:"GET",
@@ -12,7 +13,8 @@ export const getTaskListApi = () => {
             dispatch({
                 type:GET_TASK_API,
                 taskList:res.data,
-            })
+            });
+            dispatch(hideLoading());
         })
         .catch((err)=>{
             console.log(err.response?.data)
@@ -22,6 +24,7 @@ export const getTaskListApi = () => {
 
 export const addTaskApi =(taskName)=>{
     return dispatch=>{
+        dispatch(showLoading())
         return axios({
             url:"http://svcy.myclass.vn/api/ToDoList/AddTask",
             method:"POST",
@@ -29,6 +32,7 @@ export const addTaskApi =(taskName)=>{
         })
         .then((res)=>{
           dispatch(getTaskListApi());
+          dispatch(hideLoading());
         })
         .catch((err)=>{
             alert(err.response?.data) 
@@ -38,6 +42,7 @@ export const addTaskApi =(taskName)=>{
 }
 export const delTaskApi =(taskName)=>{
     return dispatch=>{
+        dispatch(showLoading())
         return axios({
             url:`http://svcy.myclass.vn/api/ToDoList/deleteTask?taskName=${taskName}`,
             method:"DELETE",
@@ -45,6 +50,7 @@ export const delTaskApi =(taskName)=>{
         })
         .then((res)=>{
         dispatch(getTaskListApi());
+        dispatch(hideLoading());
         })
         .catch((err)=>{
             console.log(err.response?.data) 
@@ -54,12 +60,14 @@ export const delTaskApi =(taskName)=>{
 }
 export const checkTaskApi =(taskName)=>{
     return dispatch=>{
+        dispatch(showLoading())
         return axios({
             url:`http://svcy.myclass.vn/api/ToDoList/doneTask?taskName=${taskName}`,
             method:"PUT",
         })
         .then((res)=>{
          dispatch(getTaskListApi());
+         dispatch(hideLoading())
         })
         .catch((err)=>{
             console.log(err.response?.data) 
@@ -68,6 +76,7 @@ export const checkTaskApi =(taskName)=>{
 }
 export const recheckTaskApi =(taskName)=>{
     return dispatch=>{
+        dispatch(showLoading())
         return axios({
             url:`http://svcy.myclass.vn/api/ToDoList/rejectTask?taskName=${taskName}`,
             method:"PUT",
@@ -75,10 +84,22 @@ export const recheckTaskApi =(taskName)=>{
         })
         .then((res)=>{
           dispatch(getTaskListApi());
+          dispatch(hideLoading())
         })
         .catch((err)=>{
             console.log(err.response?.data) 
          
         })
     }
+}
+
+export const showLoading =()=>dispatch=>{
+    dispatch({
+        type:"SHOW_LOADING"
+    });
+}
+export const hideLoading =()=>dispatch=>{
+    dispatch({
+        type:"HIDE_LOADING"
+    });
 }
