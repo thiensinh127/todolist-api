@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/sinh-todolist/static/css/main.af9a21a1.chunk.css",
+    "main.js": "/sinh-todolist/static/js/main.8563213d.chunk.js",
+    "main.js.map": "/sinh-todolist/static/js/main.8563213d.chunk.js.map",
+    "runtime-main.js": "/sinh-todolist/static/js/runtime-main.43891224.js",
+    "runtime-main.js.map": "/sinh-todolist/static/js/runtime-main.43891224.js.map",
+    "static/js/2.1310b632.chunk.js": "/sinh-todolist/static/js/2.1310b632.chunk.js",
+    "static/js/2.1310b632.chunk.js.map": "/sinh-todolist/static/js/2.1310b632.chunk.js.map",
+    "static/js/3.386a21b0.chunk.js": "/sinh-todolist/static/js/3.386a21b0.chunk.js",
+    "static/js/3.386a21b0.chunk.js.map": "/sinh-todolist/static/js/3.386a21b0.chunk.js.map",
+    "index.html": "/sinh-todolist/index.html",
+    "static/css/main.af9a21a1.chunk.css.map": "/sinh-todolist/static/css/main.af9a21a1.chunk.css.map",
+    "static/js/2.1310b632.chunk.js.LICENSE.txt": "/sinh-todolist/static/js/2.1310b632.chunk.js.LICENSE.txt",
+    "static/media/Spinner-1s-200px (1).6f75c712.gif": "/sinh-todolist/static/media/Spinner-1s-200px (1).6f75c712.gif",
+    "static/media/X2oObC4.dfa77826.png": "/sinh-todolist/static/media/X2oObC4.dfa77826.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43891224.js",
+    "static/js/2.1310b632.chunk.js",
+    "static/css/main.af9a21a1.chunk.css",
+    "static/js/main.8563213d.chunk.js"
+  ]
+}
