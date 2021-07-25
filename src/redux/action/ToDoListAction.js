@@ -18,6 +18,7 @@ export const getTaskListApi = () => {
         })
         .catch((err)=>{
             console.log(err.response?.data)
+            dispatch(hideLoading())
         });
     }
 }
@@ -36,7 +37,7 @@ export const addTaskApi =(taskName)=>{
         })
         .catch((err)=>{
             alert(err.response?.data) 
-         
+            dispatch(hideLoading())
         })
     }
 }
@@ -54,7 +55,7 @@ export const delTaskApi =(taskName)=>{
         })
         .catch((err)=>{
             console.log(err.response?.data) 
-        
+            dispatch(hideLoading())
         })
     }
 }
@@ -71,6 +72,7 @@ export const checkTaskApi =(taskName)=>{
         })
         .catch((err)=>{
             console.log(err.response?.data) 
+            dispatch(hideLoading())
         })
     }
 }
@@ -88,7 +90,7 @@ export const recheckTaskApi =(taskName)=>{
         })
         .catch((err)=>{
             console.log(err.response?.data) 
-         
+            dispatch(hideLoading())
         })
     }
 }

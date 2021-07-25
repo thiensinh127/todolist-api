@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import "./style.css";
 class DateTime extends Component {
     constructor() {
        super();
@@ -16,7 +17,7 @@ class DateTime extends Component {
     render() {
          return(
            <div>
-             <p>{this.state.curTime}</p>
+             <p className="time">{this.state.curTime}</p>
            </div>
          );
        }

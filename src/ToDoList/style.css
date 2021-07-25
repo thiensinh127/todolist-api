@@ -64,7 +64,12 @@ body {
   .card__title p {
     font-size: 0.8rem;
   }
-  
+  .card__title h2{
+    text-shadow: 2px 0px #808080a6;
+    font-family: cursive;
+    letter-spacing: 4px;
+    color: #5f9ea0d4;
+  }
   /* Filler Button */
   .filter-btn {
     position: absolute;
@@ -180,6 +185,8 @@ body {
     /* padding: 0 60px 0 0; */
     background: rgba(222, 57, 99, 0.6);
     /* border-radius: 3px; */
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border: 0px;
@@ -333,4 +340,7 @@ body {
   .imgLoading{
     width: 60px;
     height: 60px;
+  }
+  .time{
+    color: chocolate;
   }
